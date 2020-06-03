@@ -1,0 +1,35 @@
+[{
+  "_id": {
+      "$oid": "5ed6ada1b5fd0d5cdaafe5b4"
+  },
+  "name": "Lettuce Wrap",
+  "price": "$2.99",
+  "ingredients": "meat patty, cheese, lettuce and tomato",
+  "modifications": "ordering it “protein style,” thus swapping out the spongey buns for a crisp lettuce wrap",
+  "restaurant": {
+      "restaurant": "In-N-Out",
+      "restaurant_id": {
+          "$oid": "5ed5a18dbf6891eb5e1f506b"
+      }
+  },
+  "city": {
+      "city": "Hollywood, CA",
+      "city_id": {
+          "$oid": "5ed59e497d1b7ef7c563e8f6"
+      }
+  },
+  "user": [{
+      "username": "Dr. Thelma",
+      "user_id": {
+          "$oid": "5ed5b0b6cabd8fe0f4a0f71f"
+      }
+  }],
+  "last_update": {
+      "$date": {
+          "$numberLong": "1590994800000"
+      }
+  },
+  "_v": {
+      "$numberInt": "0"
+  }
+}]

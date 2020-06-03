@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"lowcarb.city"}],"uuid":"81aa0f382bec43bd8f768528c76e25f7"}

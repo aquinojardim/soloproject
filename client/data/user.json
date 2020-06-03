@@ -1,0 +1,31 @@
+[{
+  "_id": {
+      "$oid": "5ed6ae0db5fd0d5cdaafe5b7"
+  },
+  "username": "Dr. Thelma",
+  "password": "123",
+  "email": "aquinojardim@hotmail.com",
+  "firstname": "Thelma",
+  "lastname": "Dorta",
+  "birthday": {
+      "$date": {
+          "$numberLong": "-370454400000"
+      }
+  },
+  "badge": "Health Professional",
+  "city": {
+      "city": "Hollywood, CA",
+      "city_id": {
+          "$oid": "5ed59e497d1b7ef7c563e8f6"
+      }
+  },
+  "menuitem": [{
+      "menuitem": "Lettuce Wrap",
+      "menuitem_id": {
+          "$oid": "5ed59e497d1b7ef7c563e8f6"
+      }
+  }],
+  "_v": {
+      "$numberInt": "0"
+  }
+}]
