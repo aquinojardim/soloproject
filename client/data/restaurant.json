@@ -1,23 +1,13 @@
 [{
-  "_id": {
-      "$oid": "5ed6adf4b5fd0d5cdaafe5b6"
-  },
+  "_id": "5ed6adf4b5fd0d5cdaafe5b6",
   "name": "In-N-Out",
   "streetnumber": "7009",
   "streetaddress": "Sunset blvd.",
   "zipcode": "90028",
   "phone": "(800)786-1000",
   "deliver": "no",
-  "city": {
-      "city": "Hollywood, CA",
-      "city_id": {
-          "$oid": "5ed59e497d1b7ef7c563e8f6"
-      }
-  },
-  "menuitem": {
-      "menu_item": "Lettuce Wrap"
-  },
-  "_v": {
-      "$numberInt": "0"
-  }
+  "city": "Hollywood, CA",
+  "city_id": "5ed59e497d1b7ef7c563e8f6",
+  "menu_item": "Lettuce Wrap",
+  "_v": "0"
 }]

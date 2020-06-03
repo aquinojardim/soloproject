@@ -4,34 +4,29 @@ const express = require('express');
 const lowCarbController = require('../controllers/lowCarbController');
 
 const router = express.Router();
-console.log("in api router")
-router.get('/',
-  lowCarbController.getMenuItem,
+router.get('/', lowCarbController.getMenuItem, lowCarbController.getRestaurant, lowCarbController.getCity, lowCarbController.getUser,
   (req, res) => {
-    console.log(res.locals.menuitem)
-    res.status(200).json([res.locals.menuitem])
+    res.status(200).json({menuitem: [...res.locals.menuitem], restaurant: [...res.locals.restaurant], city: [...res.locals.city], user: [...res.locals.restaurant]})
   }
-  // test
-  // (req, res) => {
-  //   console.log("in get")
-  //   res.status(200).send('on the get response')
-  // }
 );
 
-router.get('/restaurant',
-  lowCarbController.getRestaurant,
-  (req, res) => res.status(200).json({})
-);
+// router.get('/restaurant',
+//   lowCarbController.getRestaurant,
+//   (req, res) => {
+//     console.log('here', res.locals.restaurant)
+//     res.status(200).json(res.locals.restaurant)
+//   }
+// );
 
-router.get('/city',
-  lowCarbController.getCity,
-  (req, res) => res.status(200).json({})
-);
+// router.get('/city',
+//   lowCarbController.getCity,
+//   (req, res) => res.status(200).json(res.locals.city)
+// );
 
-router.get('/user',
-  lowCarbController.getUser,
-  (req, res) => res.status(200).json({})
-);
+// router.get('/user',
+//   lowCarbController.getUser,
+//   (req, res) => res.status(200).json(res.locals.user)
+// );
 
 router.post('/create',
   lowCarbController.addMenuItem,

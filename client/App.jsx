@@ -22,11 +22,11 @@ const App = props => {
             path="/"
             component={Menu}
           />
-         <Route
+         {/* <Route
             exact
             path="/create"
             component={CreateMenuItem}
-          />
+          /> */}
         </Switch>
       </main>
     </div>

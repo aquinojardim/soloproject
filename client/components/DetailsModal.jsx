@@ -2,30 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon as FAIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const restaurantModal = ({ type, position, id, closeModal }) => {
+const restaurantModal = ({ type, position, name, allData, closeModal }) => {
   const [ details, setDetails ] = useState({});
-  const [ isFetching, setIsFetching ] = useState(true);
+  const [ isLoaded, setIsLoaded ] = useState(true);
 
   useEffect(()=>{
-    if (id) {
-      setIsFetching(true);
-      fetch(`/api/${type}?id=${id}`)
-        .then(resp => resp.json())
-        .then(data => {
-          setDetails(data);
-          setIsFetching(false);
-        })
-        .catch(err => console.log('DetailsModal: fetch /api: ERROR: ', err));
+    if (name) {
+      setIsLoaded(true);
+      for( let object of allData[type]){
+        if(object.name === name){
+          setDetails(object)
+          setIsLoaded(false);
+        }
+      }
     } else {
       setDetails({name: 'Unavailable'});
-      setIsFetching(false);
+      setIsLoaded(false);
     }
-  }, [id, type]);
+  }, [name, type, allData]);
 
-  if (isFetching) {
+  if (isLoaded) {
     return (
       <div className="modal" style={position}>
-        <p>Fetching restaurant data...</p>
+        <p>Loading restaurant data...</p>
       </div>
     );
   }

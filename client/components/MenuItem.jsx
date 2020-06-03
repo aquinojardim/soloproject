@@ -9,12 +9,12 @@ class Menu extends Component {
     super(props);
     this.state = {
       fetchedMenu: false,
-      menu: [],
+      allData: {},
       modalState: {
         open: false,
         type: null,
         position: { top: 0, left: 0 },
-        id: null
+        name: null
       }
     };
 
@@ -23,28 +23,25 @@ class Menu extends Component {
   }
 
   componentDidMount() {
-    console.log("in componentDidMount")
     fetch('/api/')
-      // .then((res) => {return res.json()})
-      .then((menu) => {
-        console.log(menu)
-        if (!Array.isArray(menu)) menu = [];
+      .then((res) => {return res.json()})
+      .then((allData) => {
         return this.setState({
-          menu,
+          allData,
           fetchedMenu: true
-        });
       })
+    })
       .catch(err => console.log('Menu.componentDidMount: get menu: ERROR: ', err));
   }
 
-  openModal(type, position, id) {
+  openModal(type, position, name) {
     this.setState({
       modalState: {
         ...this.state.modalState,
         open: true,
         type,
         position,
-        id
+        name
       }
     })
   }
@@ -65,19 +62,14 @@ class Menu extends Component {
       </div>
     );
 
-    const { menu } = this.state;
+    const { allData } = this.state;
 
-    if (!menu) return null;
-
-    if (!menu.length) return (
-      <div>Sorry, no menu found</div>
-    );
-
-    const charElems = menu.map((char, i) => {
+    const itemElems = allData['menuitem'].map((info, key) => {
       return (
         <MenuItemCard
-          key={i}
-          info={char}
+        key={key}
+        info={info}
+        allData={allData}
           openModal={this.openModal}
         />
       );
@@ -97,13 +89,14 @@ class Menu extends Component {
           </Link>
         </header>
         <div className="charContainer">
-          {charElems}
+          {itemElems}
         </div>
         {this.state.modalState.open &&
           <DetailsModal
             type={this.state.modalState.type}
             position={this.state.modalState.position}
-            id={this.state.modalState.id}
+            name={this.state.modalState.name}
+            allData={this.state.allData}
             closeModal={this.closeModal}
           />
         }

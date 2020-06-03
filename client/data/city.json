@@ -1,21 +1,13 @@
 [{
-  "_id": {
-      "$oid": "5ed6ad69b5fd0d5cdaafe5b3"
-  },
+  "_id": "5ed6ad69b5fd0d5cdaafe5b3",
   "name": "Hollywood",
   "state": "CA",
   "restaurant": [{
       "restaurant": "In-N-Out",
-      "restaurant_id": {
-          "$oid": "5ed5a18dbf6891eb5e1f506b"
-      }
+      "restaurant_id": "5ed5a18dbf6891eb5e1f506b"
   }, {
       "restaurant": "Cheesecake Factory",
-      "retaurant_id": {
-          "$oid": "5ed5a15cbf6891eb5e1f506a"
-      }
+      "retaurant_id": "5ed5a15cbf6891eb5e1f506a"
   }],
-  "_v": {
-      "$numberInt": "0"
-  }
+  "_v": "0"
 }]
